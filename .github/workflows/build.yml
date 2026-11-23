@@ -26,7 +26,7 @@ jobs:
           # 上游 make cli-deps-static-sites 的等价物：占位满足 go:embed
           mkdir -p server/docs server/site
           touch server/docs/index.html server/site/app.html
-          CGO_ENABLED=0 go build -ldflags "-s -w" -o ntfy .
+          go build -ldflags "-s -w" -o ntfy .
           VER=${GITHUB_REF_NAME#v}
           tar czf "ntfy_${VER}_linux_amd64.tar.gz" ntfy
 
